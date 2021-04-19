@@ -126,3 +126,8 @@ Video link
 https://youtu.be/FGR21U1rhLI
 
 ```
+
+<h2> Further Improvements </h2>
+
+<p> Sometimes the agent fails very badly in some states. This means that some states are not well explored. We can further train the model to some more epochs or use prioritized experience replay to give more priority to rare states. Here in this approach we have ignored the images of the camera from the agent. So in future we can also include that to produce more sophisticated agent.</p>
+
