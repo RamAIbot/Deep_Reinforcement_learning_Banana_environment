@@ -66,3 +66,58 @@ Here alhpa determines the learning rate of updating the Q table. For updating th
 <h3> Fixed Q targets </h3>
 
 <p> The other problem in the Q learning is that from the update equation we have a correlation between the target and the parameters which the agent is learning. We have the weights which approximate the action value function Q and we use this action value function to update the weights of Q. Thus we a chasing a moving target which is not efficient learning approach. So to solve this problem we use a Fixed Q target function and we use this to find the MSE between the local and target network. After few steps of training we update the target network using the local network. We perform soft update of the target network perventing any drastic changes from the local network.</p>
+
+<img src="" alt="qtarget"/>
+
+where W minus is the weights of the fixed target network.
+
+<h3> Deep Q learning algorithm </h3>
+
+<img src="" alt="dqn"/>
+
+<h2> Implementation </h2>
+
+<p> The model uses 2 Linear layers with a Relu activation function. The input state feature vector is passed to the network and the final third linear layer provides the Q value for the 4 possible actions. We use a batch size of 64 and update the target Q network every 4 iterations. The model is trained for 2000 episodes with an average score of  14.14.</p>
+
+```
+//Download the ML agents for banana environment from the repo
+https://github.com/Unity-Technologies/ml-agents/blob/main/docs/Learning-Environment-Examples.md#banana-collector
+
+move to the path
+jupyter notebook Navigation.ipynb
+
+```
+
+<h3> For testing in local environment </h3>
+
+```
+Install anaconda python
+
+Create new conda environment
+conda create -n ml-agents python=3.6
+conda activate ml-agents
+
+Install Cuda toolkit and CuDNN library
+Cuda 11.2.2
+cuDNN 8.1.0
+
+pip install tensorflow-gpu
+conda install pytorch torchvision torchaudio cudatoolkit=11.0 -c pytorch
+pip install unityagents
+pip install mlagents
+
+move to the path
+jupyter notebook Navigation.ipynb
+
+```
+
+<h2> Results </h2>
+
+<h3> Training </h3>
+
+<img src="" alt="train"/>
+
+<h2> Testing </h2>
+
+<p> To test the model,Start execution from "#Testing" code Block. The simulator can run only once each time the kernel is opened as once the environment is clsoed the port is removed. So each time we need to restart kernel and run.</p>
+
