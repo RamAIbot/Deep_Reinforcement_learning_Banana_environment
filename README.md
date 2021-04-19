@@ -67,13 +67,13 @@ Here alhpa determines the learning rate of updating the Q table. For updating th
 
 <p> The other problem in the Q learning is that from the update equation we have a correlation between the target and the parameters which the agent is learning. We have the weights which approximate the action value function Q and we use this action value function to update the weights of Q. Thus we a chasing a moving target which is not efficient learning approach. So to solve this problem we use a Fixed Q target function and we use this to find the MSE between the local and target network. After few steps of training we update the target network using the local network. We perform soft update of the target network perventing any drastic changes from the local network.</p>
 
-<img src="" alt="qtarget"/>
+<img src="Capture6.PNG" alt="qtarget"/>
 
 where W minus is the weights of the fixed target network.
 
 <h3> Deep Q learning algorithm </h3>
 
-<img src="" alt="dqn"/>
+<img src="Capture7.PNG" alt="dqn"/>
 
 <h2> Implementation </h2>
 
@@ -115,7 +115,7 @@ jupyter notebook Navigation.ipynb
 
 <h3> Training </h3>
 
-<img src="" alt="train"/>
+<img src="Capture8.PNG" alt="train"/>
 
 <h2> Testing </h2>
 
