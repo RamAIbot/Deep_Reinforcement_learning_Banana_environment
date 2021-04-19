@@ -121,3 +121,8 @@ jupyter notebook Navigation.ipynb
 
 <p> To test the model,Start execution from "#Testing" code Block. The simulator can run only once each time the kernel is opened as once the environment is clsoed the port is removed. So each time we need to restart kernel and run.</p>
 
+```
+Video link 
+https://youtu.be/FGR21U1rhLI
+
+```
