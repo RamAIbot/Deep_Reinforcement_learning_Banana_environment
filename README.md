@@ -79,12 +79,26 @@ where W minus is the weights of the fixed target network.
 
 <p> The model uses 2 Linear layers with a Relu activation function. The input state feature vector is passed to the network and the final third linear layer provides the Q value for the 4 possible actions. We use a batch size of 64 and update the target Q network every 4 iterations. The model is trained for 2000 episodes with an average score of  14.14.</p>
 
-```
-//Download the ML agents for banana environment from the repo
-https://github.com/Unity-Technologies/ml-agents/blob/main/docs/Learning-Environment-Examples.md#banana-collector
+<h3> For Udacity Environment </h3>
 
-move to the path
+```
+//Download the ML agents for banana environment from the repo for 
+* [Linux](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P1/Banana/Banana_Linux.zip)
+* [Mac OSX](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P1/Banana/Banana.app.zip)
+* [Windows (32-bits)](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P1/Banana/Banana_Windows_x86.zip)
+* [Windows (64 bits)](https://s3-us-west-1.amazonaws.com/udacity-drlnd/P1/Banana/Banana_Windows_x86_64.zip)
+Source : Udacity
+
+Clone the repo 
+git clone https://github.com/RamAIbot/Deep_Reinforcement_learning_Banana_environment.git
+
+Place the simulator inside the folder (for Windows its already added).
+
+To Run Training
 jupyter notebook Navigation.ipynb
+
+To Run Testing 
+jupyter notebook Testing.ipynb
 
 ```
 
@@ -113,9 +127,53 @@ jupyter notebook Navigation.ipynb
 
 <h2> Results </h2>
 
+<h3>Hyper Parameters </h3>
+
+<UL>
+  <LI> BUFFER_SIZE = int(1e5) </LI>
+  <LI> BATCH_SIZE = 64 </LI>
+  <LI> GAMMA = 0.99 </LI>
+  <LI> TAU = 1e-3 </LI>
+  <LI> LR = 5e-4 </LI>
+  <LI> UPDATE_EVERY = 4 </LI>
+  <LI> SEED = 0 </LI>
+  <LI> MAX TIME = 1000 </LI>
+  <LI> EPSILON_START = 1.0 </LI>
+  <LI> EPSILON_MINIMUM = 0.01 </LI>
+  <LI> EPSILON DECAY = 0.995 </LI>
+</UL>
+
 <h3> Training </h3>
 
 <img src="Capture8.PNG" alt="train"/>
+
+<h3> Train Results </h3>
+
+<p> The agent solved the environment with an average score greater than +13 at episode 900. From there we can see that the network is converged and the score remains stable of above +13. </p>
+
+```
+Episode 100	Average Score: 0.92
+Episode 200	Average Score: 4.42
+Episode 300	Average Score: 7.47
+Episode 400	Average Score: 9.54
+Episode 500	Average Score: 10.93
+Episode 600	Average Score: 12.72
+Episode 700	Average Score: 13.56
+Episode 800	Average Score: 12.69
+Episode 900	Average Score: 13.83
+Episode 1000	Average Score: 14.36
+Episode 1100	Average Score: 15.68
+Episode 1200	Average Score: 14.31
+Episode 1300	Average Score: 13.95
+Episode 1400	Average Score: 15.03
+Episode 1500	Average Score: 15.63
+Episode 1600	Average Score: 15.50
+Episode 1700	Average Score: 14.71
+Episode 1800	Average Score: 14.41
+Episode 1900	Average Score: 13.60
+Episode 2000	Average Score: 14.14
+
+```
 
 <h2> Testing </h2>
 
@@ -129,5 +187,5 @@ https://youtu.be/FGR21U1rhLI
 
 <h2> Further Improvements </h2>
 
-<p> Sometimes the agent fails very badly in some states. This means that some states are not well explored. We can further train the model to some more epochs or use prioritized experience replay to give more priority to rare states. Here in this approach we have ignored the images of the camera from the agent. So in future we can also include that to produce more sophisticated agent.</p>
+<p> Sometimes the agent fails very badly in some states. This means that some states are not well explored. We can further train the model by tuning hyperparameters to stabilize the result or use prioritized experience replay to give more priority to rare states. Here in this approach we have ignored the images of the camera from the agent. So in future we can also include that to produce more sophisticated agent.</p>
 
